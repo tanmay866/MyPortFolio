@@ -254,6 +254,7 @@ nav.scrolled {
     border-radius: var(--radius); padding: 1.9rem;
     display: flex; flex-direction: column; box-shadow: var(--shadow-sm);
     transition: transform .3s cubic-bezier(.2, .8, .2, 1), border-color .3s ease, box-shadow .3s ease;
+    transform-style: preserve-3d; will-change: transform; backface-visibility: hidden;
 }
 .project-card:hover { transform: translateY(-5px); border-color: var(--accent-line); box-shadow: var(--shadow-md); }
 .project-card.featured { border-color: var(--accent-line); background: linear-gradient(180deg, var(--accent-soft), transparent 30%), var(--bg-raised); }
