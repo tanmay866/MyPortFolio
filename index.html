@@ -1,271 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="description" content="Tanmay Patel - Computer Engineering Student Portfolio showcasing projects in Artificial intelligence (AI), Web Development, and more.">
-    <meta name="theme-color" content="#0A192F">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Tanmay Patel - Portfolio</title>
-    
-    <!-- Favicon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tanmay Patel — Computer Engineering student building intelligent systems and full-stack web experiences.">
+    <meta name="theme-color" content="#070710">
+    <title>Tanmay Patel — Computer Engineer & Developer</title>
     <link rel="icon" href="assets/favicon.png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    <link rel="manifest" href="site.webmanifest">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'navy': '#0A192F',
-                        'aqua': '#64FFDA',
-                        'light-blue': '#CCD6F6',
-                        'gray-blue': '#8892B0',
-                        'navy-light': '#112240',
-                    },
-                    fontFamily: {
-                        'poppins': ['Poppins', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+    <!-- Mark JS as available so reveal animations only hide content when JS can reveal it -->
+    <script>document.documentElement.classList.add('js');</script>
 </head>
-<body class="bg-navy font-poppins text-light-blue" id="top">
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full bg-navy shadow-lg z-50 py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-semibold text-aqua">Tanmay Patel</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-light-blue hover:text-aqua transition-colors">Home</a>
-                <a href="#about" class="text-light-blue hover:text-aqua transition-colors">About</a>
-                <a href="#projects" class="text-light-blue hover:text-aqua transition-colors">Projects</a>
-                <a href="#resume" class="text-light-blue hover:text-aqua transition-colors">Resume</a>
-                <a href="#contact" class="text-light-blue hover:text-aqua transition-colors">Contact</a>
-            </div>
-            <button class="md:hidden text-light-blue hover:text-aqua transition-colors" id="mobile-menu-button">
-                <i class="fas fa-bars text-2xl"></i>
+
+<body id="top">
+    <!-- Aurora background -->
+    <div class="aurora" aria-hidden="true">
+        <span class="aurora-blob blob-1"></span>
+        <span class="aurora-blob blob-2"></span>
+        <span class="aurora-blob blob-3"></span>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#top" class="nav-logo">
+                <span class="logo-mark">TP</span>
+                <span class="logo-text">Tanmay Patel</span>
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
             </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-navy-light py-4 animate-fadeIn">
-            <div class="container mx-auto px-4">
-                <ul class="flex flex-col space-y-4">
-                    <li><a href="#home" class="text-light-blue hover:text-aqua">Home</a></li>
-                    <li><a href="#about" class="text-light-blue hover:text-aqua">About</a></li>
-                    <li><a href="#projects" class="text-light-blue hover:text-aqua">Projects</a></li>
-                    <li><a href="#resume" class="text-light-blue hover:text-aqua">Resume</a></li>
-                    <li><a href="#contact" class="text-light-blue hover:text-aqua">Contact</a></li>
-                </ul>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="assets/TANMAY PATEL_Resume.pdf" target="_blank" class="nav-cta">Resume</a>
             </div>
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
-        <div id="particles-js-home" class="absolute inset-0 z-0 opacity-50"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div data-aos="fade-right">
-                    <p class="text-aqua text-xl md:text-2xl font-bold mb-4 font-poppins">Hello</p>
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
-                        <span class="typing-text"></span><span class="typing-cursor">|</span>
-                    </h1>
-                    <p class="text-gray-blue text-lg md:text-xl mb-8">
-                        A passionate Computer Engineering student with a keen interest in Artificial intelligence (AI) and Web Development.
-                    </p>
-                    <a href="#projects" class="inline-block px-8 py-3 border-2 border-aqua text-aqua hover:bg-aqua/10 transition-colors rounded-full">
-                        View Projects
+    <!-- Hero -->
+    <header id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content reveal">
+                <span class="hero-badge"><span class="ping"></span> Available for internships &amp; opportunities</span>
+                <h1 class="hero-title">
+                    Hi, I'm Tanmay.<br>
+                    I build <span class="gradient-text">intelligent systems</span> &amp; web experiences.
+                </h1>
+                <p class="hero-desc">
+                    Computer Engineering student at CHARUSAT University, focused on Artificial Intelligence,
+                    Machine Learning, and Full-Stack Development. I turn ideas into clean, working products.
+                </p>
+                <div class="btn-group">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-arrow-down"></i> View My Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="far fa-envelope"></i> Get in Touch
                     </a>
                 </div>
-                <div class="flex justify-center" data-aos="fade-left">
-                    <img src="assets/Tanmay.jpg" alt="Tanmay Patel" class="w-72 h-72 md:w-80 md:h-80 rounded-full object-cover border-2 border-aqua shadow-lg profile-float">
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num" data-count="3">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="6">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-count="2027">0</span>
+                        <span class="stat-label">Graduating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal delay-2">
+                <div class="avatar-wrap">
+                    <div class="avatar-glow"></div>
+                    <img src="assets/Tanmay.jpg" alt="Tanmay Patel" class="avatar">
+                    <div class="floating-chip chip-1"><i class="fab fa-python"></i> Python</div>
+                    <div class="floating-chip chip-2"><i class="fab fa-react"></i> React</div>
+                    <div class="floating-chip chip-3"><i class="fas fa-brain"></i> AI / ML</div>
                 </div>
             </div>
         </div>
-    </section>
+        <a href="#about" class="scroll-cue" aria-label="Scroll down">
+            <span></span>
+        </a>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-navy-light relative overflow-hidden">
-        <div id="particles-js-about" class="absolute inset-0 z-0 opacity-30"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">About Me</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div data-aos="fade-right">
-                    <h3 class="text-xl font-semibold mb-4">Background</h3>
-                    <p class="text-gray-blue mb-6">
-                        I'm currently pursuing my B.Tech in Computer Engineering at CSPIT, Charusat University. My academic journey has equipped me with strong problem-solving skills and a deep understanding of computer science fundamentals.
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag">01 — About</span>
+                <h2 class="section-title">A bit about me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        I'm pursuing my B.Tech in Computer Engineering at <strong>CSPIT, CHARUSAT University</strong>.
+                        My coursework and projects have given me a solid foundation in computer science fundamentals,
+                        problem-solving, and software design.
                     </p>
-                    <h3 class="text-xl font-semibold mb-4">Interests</h3>
-                    <ul class="list-disc list-inside text-gray-blue mb-6">
-                        <li>Artificial Intelligence & Machine Learning</li>
-                        <li>Web Development</li>
-                       
-                    </ul>
-                </div>
-                <div data-aos="fade-left">
-                    <h3 class="text-xl font-semibold mb-4">Skills</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-navy p-4 rounded">
-                            <h4 class="text-aqua mb-2">Languages</h4>
-                            <ul class="text-gray-blue">
-                                <li>Java</li>
-                                <li>C++</li>
-                                <li>Python</li>
-                                <li>JavaScript</li>
-                            </ul>
-                        </div>
-                        <div class="bg-navy p-4 rounded">
-                            <h4 class="text-aqua mb-2">Technologies</h4>
-                            <ul class="text-gray-blue">
-                                <li>Node.js</li>
-                                <li>React</li>
-                                <li>MySQL</li>
-                                <li>Git</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 relative overflow-hidden">
-        <div id="particles-js-projects" class="absolute inset-0 z-0 opacity-30"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">My Projects</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-navy-light p-6 rounded-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold mb-4">Resume Scout</h3>
-                    <p class="text-gray-blue mb-4">A collaborative project for resume analysis and job matching developed with team members.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">HTML</span>
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">CSS</span>
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">JavaScript</span>
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">Node.js</span>
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">MySQL</span>
-                    </div>
-                    <div class="flex gap-4">
-                        <a href="https://github.com/tanmay866/resume-scout" target="_blank" class="text-aqua hover:text-light-blue transition-colors">
+                    <p>
+                        I'm especially drawn to <strong>Artificial Intelligence, Machine Learning, and Web
+                        Development</strong> — I love the moment an idea becomes something people can actually use.
+                        When I'm not coding, I'm exploring new tools and sharpening my craft.
+                    </p>
+                    <div class="about-actions">
+                        <a href="assets/TANMAY PATEL_Resume.pdf" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                        <a href="https://github.com/tanmay866" target="_blank" class="btn btn-ghost">
                             <i class="fab fa-github"></i> GitHub
                         </a>
-                        
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="bg-navy-light p-6 rounded-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold mb-4">Personal Finance Manager</h3>
-                    <p class="text-gray-blue mb-4">A Flask-based personal finance application for tracking expenses, income, and savings goals with visual reports and intuitive categorization to help users manage their finances effectively.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">HTML | CSS | Js</span>
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">Python(Flask web framework)</span>
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">SQLite(local development)</span>
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">PostgreSQL(production)</span>
+                <div class="about-side reveal delay-1">
+                    <h3 class="card-label"><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2023 — 2027</div>
+                            <div class="timeline-role">B.Tech, Computer Engineering</div>
+                            <div class="timeline-org">CSPIT, CHARUSAT University</div>
                         </div>
-                    <div class="flex gap-4">
-                        <a href="https://github.com/tanmay866/Personal-Finance-Manager" target="_blank" class="text-aqua hover:text-light-blue transition-colors">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="bg-navy-light p-6 rounded-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold mb-4">Sports Event Management System</h3>
-                    <p class="text-gray-blue mb-4">A platform for organizing and managing sports events, teams, and tournaments.</p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-navy rounded-full text-sm">Java</span>
-                       </div>
-                    <div class="flex gap-4">
-                        <a href="https://github.com/tanmay866/MyPortFolio" class="text-aqua hover:text-light-blue transition-colors">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resume Section -->
-    <section id="resume" class="py-20 bg-navy-light relative overflow-hidden">
-        <div id="particles-js-resume" class="absolute inset-0 z-0 opacity-30"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Resume</h2>
-            
-            <!-- Resume Button -->
-            <div class="text-center mb-12" data-aos="fade-up">
-                <a href="assets/TANMAY PATEL_Resume.pdf" target="_blank" class="resume-btn pulse-animation inline-block px-8 py-3 bg-aqua/10 border-2 border-aqua text-aqua hover:bg-aqua/20 transition-colors rounded-full">
-                    <i class="fas fa-eye mr-2"></i>View Resume
-                </a>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Education Section -->
-                <div class="bg-navy p-6 rounded-lg" data-aos="fade-right">
-                    <h3 class="text-xl font-semibold mb-6 text-aqua">Education</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-semibold text-lg">B.Tech in Computer Engineering</h4>
-                            <p class="text-gray-blue">CSPIT, CHARUSAT University</p>
-                            <p class="text-gray-blue">2023 - 2027</p>
-                           
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-lg">Higher Secondary Education</h4>
-                            <p class="text-gray-blue">Science Stream</p>
-                            <p class="text-gray-blue">2021 - 2023</p>
-                            <p class="text-gray-blue">BAPS Shri Swaminarayan Vidyamandir, Gondal</p>   
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skills Section -->
-                <div class="bg-navy p-6 rounded-lg" data-aos="fade-left">
-                    <h3 class="text-xl font-semibold mb-6 text-aqua">Technical Skills</h3>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-semibold mb-3">Programming Languages</h4>
-                            <ul class="text-gray-blue space-y-2">
-                                <li>Java</li>
-                                <li>C++</li>
-                                <li>Python</li>
-                                <li>JavaScript</li>  
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold mb-3">Technologies</h4>
-                            <ul class="text-gray-blue space-y-2">
-                                <li>Node.js</li>
-                                <li>React</li>
-                                <li>MySQL</li>
-                                <li>Git</li>
-                            </ul>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-date">2021 — 2023</div>
+                            <div class="timeline-role">Higher Secondary (Science)</div>
+                            <div class="timeline-org">BAPS Shri Swaminarayan Vidyamandir</div>
                         </div>
                     </div>
                 </div>
@@ -273,82 +148,176 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 relative overflow-hidden">
-        <div id="particles-js-contact" class="absolute inset-0 z-0 opacity-30"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <h2 class="text-3xl font-bold mb-12 text-center" data-aos="fade-up">Get In Touch</h2>
-            
-            <div class="max-w-3xl mx-auto">
-                <!-- Contact Info -->
-                <div class="bg-navy-light p-8 rounded-lg mb-10" data-aos="fade-up">
-                    <div class="text-center">
-                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-                        <div class="space-y-4 max-w-md mx-auto">
-                            <p class="flex items-center justify-center text-gray-blue">
-                                <i class="fas fa-envelope text-aqua mr-4"></i>
-                                <a href="mailto:tanmaypatel866@gmail.com" class="hover:text-aqua transition-colors">
-                                    tanmaypatel866@gmail.com
-                                </a>
-                            </p>
-                            <p class="flex items-center justify-center text-gray-blue">
-                                <i class="fas fa-phone text-aqua mr-4"></i>
-                                <a href="tel:+91 9313928398" class="hover:text-aqua transition-colors">
-                                    +91 9313928398
-                                </a>
-                            </p>
-                            <p class="flex items-center justify-center text-gray-blue">
-                                <i class="fas fa-map-marker-alt text-aqua mr-4"></i>
-                                Gujarat, India
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag">02 — Work</span>
+                <h2 class="section-title">Featured projects</h2>
+                <p class="section-sub">A selection of things I've designed and built.</p>
+            </div>
 
-                <div class="bg-navy-light p-8 rounded-lg" data-aos="fade-up">
-                    <div class="text-center">
-                        <h3 class="text-xl font-semibold mb-6">Connect With Me</h3>
-                        <div class="flex justify-center space-x-8">
-                            <a href="https://www.linkedin.com/in/tanmay-patel-138846284" target="_blank" class="text-4xl text-gray-blue hover:text-aqua transition-colors">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/tanmay866" target="_blank" class="text-4xl text-gray-blue hover:text-aqua transition-colors">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://x.com/tanmaypatel866" target="_blank" class="text-4xl text-gray-blue hover:text-aqua transition-colors">
-                                <i class="fab fa-x-twitter"></i>
-                            </a>
-                            <a href="https://www.instagram.com/tanmaypatel.866/" target="_blank" class="text-4xl text-gray-blue hover:text-aqua transition-colors">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
+            <div class="projects-grid">
+                <!-- EduPath (Featured) -->
+                <article class="project-card featured reveal">
+                    <div class="project-top">
+                        <div class="project-icon"><i class="fas fa-route"></i></div>
+                        <a href="https://github.com/tanmay866/EduPath" target="_blank" class="project-link"
+                            aria-label="View EduPath on GitHub"><i class="fab fa-github"></i></a>
                     </div>
+                    <h3 class="project-title">EduPath</h3>
+                    <p class="project-desc">
+                        An AI-powered career platform that assesses a user's skills, generates personalized career
+                        roadmaps, builds resumes, and deploys portfolios. Built as three services — a React frontend,
+                        an Express/MongoDB backend, and a Python AI microservice using OCR and LangChain.
+                    </p>
+                    <div class="tech-list">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">Tailwind</span>
+                    </div>
+                </article>
+
+                <!-- Resume Scout -->
+                <article class="project-card reveal delay-1">
+                    <div class="project-top">
+                        <div class="project-icon"><i class="fas fa-file-lines"></i></div>
+                        <a href="https://github.com/tanmay866/resume-scout" target="_blank" class="project-link"
+                            aria-label="View Resume Scout on GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="project-title">Resume Scout</h3>
+                    <p class="project-desc">
+                        A collaborative resume-analysis and job-matching tool that helps users optimize their
+                        resumes for ATS systems and land more interviews.
+                    </p>
+                    <div class="tech-list">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                    </div>
+                </article>
+
+                <!-- Finance Manager -->
+                <article class="project-card reveal delay-2">
+                    <div class="project-top">
+                        <div class="project-icon"><i class="fas fa-wallet"></i></div>
+                        <a href="https://github.com/tanmay866/Personal-Finance-Manager" target="_blank"
+                            class="project-link" aria-label="View Finance Manager on GitHub"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="project-title">Finance Manager</h3>
+                    <p class="project-desc">
+                        A Flask web app for tracking expenses, income, and savings goals — complete with visual
+                        reports that make personal budgeting effortless.
+                    </p>
+                    <div class="tech-list">
+                        <span class="tech-tag">Python (Flask)</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SQLite</span>
+                    </div>
+                </article>
+
+                <!-- Sports Event System -->
+                <article class="project-card reveal delay-3">
+                    <div class="project-top">
+                        <div class="project-icon"><i class="fas fa-trophy"></i></div>
+                        <a href="https://github.com/tanmay866/Sports-Event-Management" target="_blank"
+                            class="project-link" aria-label="View Sports Event System on GitHub"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                    <h3 class="project-title">Sports Event System</h3>
+                    <p class="project-desc">
+                        A desktop platform for organizing and managing sports events, teams, and tournaments with
+                        a clean Java Swing interface.
+                    </p>
+                    <div class="tech-list">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Swing</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-head reveal">
+                <span class="section-tag">03 — Toolbox</span>
+                <h2 class="section-title">Technical arsenal</h2>
+                <p class="section-sub">Languages and tools I work with regularly.</p>
+            </div>
+            <div class="skills-grid reveal">
+                <div class="skill-box"><i class="fab fa-java"></i><span>Java</span></div>
+                <div class="skill-box"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-box"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="skill-box"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="skill-box"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                <div class="skill-box"><i class="fas fa-database"></i><span>MySQL</span></div>
+                <div class="skill-box"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="skill-box"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="skill-box"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                <div class="skill-box"><i class="fas fa-brain"></i><span>AI / ML</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-card reveal">
+                <span class="section-tag">04 — Contact</span>
+                <h2 class="section-title">Let's build something together</h2>
+                <p class="section-sub">
+                    I'm open to internships, collaborations, or just a friendly chat. Drop me a line.
+                </p>
+                <div class="contact-methods">
+                    <a href="mailto:tanmaypatel866@gmail.com" class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <span class="cm-label">Email</span>
+                            <span class="cm-value">tanmaypatel866@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:+919313928398" class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <span class="cm-label">Phone</span>
+                            <span class="cm-value">+91 93139 28398</span>
+                        </div>
+                    </a>
+                </div>
+                <a href="mailto:tanmaypatel866@gmail.com" class="btn btn-primary btn-lg">
+                    <i class="far fa-paper-plane"></i> Say Hello
+                </a>
+                <div class="social-links">
+                    <a href="https://github.com/tanmay866" target="_blank" class="social-link" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/tanmay-patel-138846284" target="_blank" class="social-link"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://x.com/tanmaypatel866" target="_blank" class="social-link" aria-label="Twitter / X"><i
+                                class="fab fa-x-twitter"></i></a>
+                    <a href="mailto:tanmaypatel866@gmail.com" class="social-link" aria-label="Email"><i
+                                class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-6 bg-navy-light">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-blue">© 2025 Tanmay Patel. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="https://www.linkedin.com/in/tanmay-patel-138846284" target="_blank" class="text-gray-blue hover:text-aqua transition-colors">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/tanmay866" target="_blank" class="text-gray-blue hover:text-aqua transition-colors">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:tanmaypatel866@gmail.com" class="text-gray-blue hover:text-aqua transition-colors">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
+    <footer>
+        <div class="container footer-inner">
+            <span class="logo-mark">TP</span>
+            <p>&copy; 2026 Tanmay Patel. Designed &amp; built with care.</p>
+            <a href="#top" class="back-top">Back to top <i class="fas fa-arrow-up"></i></a>
         </div>
     </footer>
 
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
-</html> 
+
+</html>
