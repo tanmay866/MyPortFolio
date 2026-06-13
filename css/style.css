@@ -395,6 +395,17 @@ nav.scrolled {
 }
 .tech-tag:hover { color: var(--text); border-color: var(--violet); background: rgba(139, 92, 246, .12); }
 
+.project-demo {
+    display: inline-flex; align-items: center; gap: .5rem;
+    margin-top: 1.2rem; align-self: flex-start;
+    padding: .6rem 1.1rem; border-radius: 10px;
+    font-size: .85rem; font-weight: 600;
+    color: #0b0b14; background: var(--grad);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.project-demo:hover { transform: translateY(-2px); box-shadow: 0 12px 26px -10px rgba(139, 92, 246, .6); }
+.project-demo i { font-size: .8rem; }
+
 /* ---------- Skills ---------- */
 .skills-grid {
     display: grid;
