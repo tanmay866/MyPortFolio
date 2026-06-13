@@ -187,6 +187,7 @@ nav.scrolled {
     background: var(--grad);
     box-shadow: 0 6px 18px -6px rgba(139, 92, 246, .7);
 }
+.logo-img { object-fit: cover; object-position: center top; }
 .logo-text { font-size: 1.02rem; letter-spacing: -.01em; }
 
 .nav-links { display: flex; align-items: center; gap: 2rem; }
