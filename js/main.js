@@ -4,6 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    /* ---- Theme toggle (light / dark) ---- */
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    const THEME_COLORS = { light: '#FAFAF8', dark: '#0F1115' };
+
+    const applyTheme = (theme) => {
+        root.setAttribute('data-theme', theme);
+        if (themeMeta) themeMeta.setAttribute('content', THEME_COLORS[theme] || THEME_COLORS.light);
+        const icon = themeToggle?.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-moon', theme === 'light');
+            icon.classList.toggle('fa-sun', theme === 'dark');
+        }
+        themeToggle?.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    };
+
+    // Sync button state with the theme set by the inline head script
+    applyTheme(root.getAttribute('data-theme') || 'light');
+
+    themeToggle?.addEventListener('click', () => {
+        const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
+    });
+
     /* ---- Nav background on scroll ---- */
     const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
     onScroll();

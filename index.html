@@ -29,8 +29,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Mark JS as available so reveal animations only hide content when JS can reveal it -->
-    <script>document.documentElement.classList.add('js');</script>
+    <!-- Mark JS available + set theme early to avoid a flash of the wrong theme -->
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                d.setAttribute('data-theme', t);
+            } catch (e) { d.setAttribute('data-theme', 'light'); }
+        })();
+    </script>
 </head>
 
 <body id="top">
@@ -44,16 +54,21 @@
                 <img src="assets/Tanmay.jpg" alt="Tanmay Patel" class="logo-mark logo-img">
                 <span class="logo-text">Tanmay Patel</span>
             </a>
-            <button class="mobile-toggle" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="assets/TANMAY PATEL_Resume.pdf" target="_blank" class="nav-cta">Resume</a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="assets/TANMAY PATEL_Resume.pdf" target="_blank" class="nav-cta">Resume</a>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </nav>
