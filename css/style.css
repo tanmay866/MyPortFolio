@@ -210,7 +210,7 @@ nav.scrolled {
 
 /* Hero photo with offset editorial frame */
 .hero-visual { display: flex; justify-content: center; }
-.avatar-wrap { position: relative; width: 330px; max-width: 82vw; }
+.avatar-wrap { position: relative; width: 330px; max-width: 82vw; transform-style: preserve-3d; will-change: transform; backface-visibility: hidden; }
 .avatar {
     position: relative; z-index: 2;
     width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center top;

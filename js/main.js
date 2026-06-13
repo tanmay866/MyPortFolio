@@ -101,27 +101,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.6 });
     document.querySelectorAll('.stat-num').forEach(el => statObserver.observe(el));
 
-    /* ---- Project card magnet / 3D tilt ---- */
+    /* ---- Magnet / 3D tilt (project cards + hero photo) ---- */
     const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (canHover && !reduceMotion) {
-        const MAX_TILT = 7;   // degrees
-        const PULL = 6;       // px the card drifts toward the cursor
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const r = card.getBoundingClientRect();
+        const addTilt = (el, { maxTilt = 7, pull = 6, lift = 6 } = {}) => {
+            el.addEventListener('mousemove', (e) => {
+                const r = el.getBoundingClientRect();
                 const px = (e.clientX - r.left) / r.width - 0.5;   // -0.5 .. 0.5
                 const py = (e.clientY - r.top) / r.height - 0.5;
-                card.style.transition = 'transform .1s ease-out';
-                card.style.transform =
-                    `perspective(900px) rotateX(${(-py * MAX_TILT).toFixed(2)}deg) ` +
-                    `rotateY(${(px * MAX_TILT).toFixed(2)}deg) ` +
-                    `translate(${(px * PULL).toFixed(1)}px, ${(py * PULL - 6).toFixed(1)}px)`;
+                el.style.transition = 'transform .1s ease-out';
+                el.style.transform =
+                    `perspective(900px) rotateX(${(-py * maxTilt).toFixed(2)}deg) ` +
+                    `rotateY(${(px * maxTilt).toFixed(2)}deg) ` +
+                    `translate(${(px * pull).toFixed(1)}px, ${(py * pull - lift).toFixed(1)}px)`;
             });
-            card.addEventListener('mouseleave', () => {
-                card.style.transition = 'transform .45s cubic-bezier(.2, .8, .2, 1)';
-                card.style.transform = '';
+            el.addEventListener('mouseleave', () => {
+                el.style.transition = 'transform .45s cubic-bezier(.2, .8, .2, 1)';
+                el.style.transform = '';
             });
-        });
+        };
+
+        document.querySelectorAll('.project-card').forEach(card => addTilt(card, { maxTilt: 7, pull: 6, lift: 6 }));
+
+        const avatar = document.querySelector('.avatar-wrap');
+        if (avatar) addTilt(avatar, { maxTilt: 9, pull: 8, lift: 0 });
     }
 });
